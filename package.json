@@ -1,0 +1,31 @@
+{
+  "name": "herokafecta",
+  "version": "1.0.0",
+  "description": "heroku-kafka simple inspection tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-osada9000:osada9000/herokafecta.git"
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "keywords": [
+    "heroku",
+    "kafka"
+  ],
+  "author": "Manabu Osada",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "no-kafka": "^2.9.2"
+  },
+  "devDependencies": {
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.1.2",
+    "power-assert": "^1.4.1"
+  }
+}
