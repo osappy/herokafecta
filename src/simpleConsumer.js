@@ -1,5 +1,5 @@
 /**
- * Created by manabu.osada on 2016/10/28.
+ * Created by manabu.osada on 2016/11/21.
  */
 
 'use strict';
@@ -7,16 +7,16 @@
 const kafka = require('no-kafka');
 const debug = require('debug');
 
-const urls = process.env.KAFKA_URL;
-const clientCert = process.env.KAFKA_CLIENT_CERT || './config/client.crt';
-const clientCertKey = process.env.KAFKA_CLIENT_CERT_KEY || './config/client.key';
+const urls = "kafka+ssl://52.44.69.117:9096,kafka+ssl://52.202.183.44:9096,kafka+ssl://52.45.180.80:9096";
+const clientCert = './config/client.crt';
+const clientCertKey = './config/client.key';
 
-const GROUP_ID = process.env.GROUPID || 'herokafecta01';
-const CLIENT_ID = process.env.CLIENTID || 'herokafecta_consumer01';
-const TOPIC = process.env.TOPIC || 'defaulttopic';
-const PARTITION = process.env.PARTITION || null;
-const IDLE_TIMEOUT = process.env.IDLE_TIMEOUT || 1000;
-const LOGLEVEL = process.env.LOGLEVEL || 0;
+const GROUP_ID = 'herokafecta_hokko';
+const CLIENT_ID = 'herokafecta_consumer_hokko';
+const TOPIC = process.argv[2]　|| 'test';
+const PARTITION = 0;
+const IDLE_TIMEOUT = 1000;
+const LOGLEVEL = 5;
 
 let consumer = new kafka.SimpleConsumer({
     idleTimeout: IDLE_TIMEOUT,
@@ -32,7 +32,6 @@ let consumer = new kafka.SimpleConsumer({
     }
 });
 
-// main
 let dataHandler = (messageSet, topic, partition) => {
     console.log("sub", new Date().toString());
     messageSet.forEach((msg, index) => {

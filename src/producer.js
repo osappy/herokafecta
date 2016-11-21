@@ -34,7 +34,7 @@ return producer.init().then(() => {
             topic: TOPIC,
             partition: PARTITION,
             message: {
-                key : "key property is a string, Buffer, ArrayBuffer, Array, or array-like object.",
+                key : "test-message",
                 value: "date: " + new Date().toString()
             }
         }).then(function (result) {

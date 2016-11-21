@@ -4,11 +4,7 @@
   "description": "heroku-kafka simple inspection tool.",
   "main": "index.js",
   "scripts": {
-
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github-osada9000:osada9000/herokafecta.git"
+    "viewtopic": "node ./src/simpleConsumer.js"
   },
   "directories": {
     "test": "test/"
