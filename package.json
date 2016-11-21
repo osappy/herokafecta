@@ -4,7 +4,7 @@
   "description": "heroku-kafka simple inspection tool.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,11 @@
   "author": "Manabu Osada",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.4.6",
     "debug": "^2.2.0",
-    "no-kafka": "^2.9.2"
+    "js-yaml": "^3.6.1",
+    "lodash.uniqby": "4.6.1",
+    "no-kafka": "^3.0.1"
   },
   "devDependencies": {
     "intelli-espower-loader": "^1.0.1",
