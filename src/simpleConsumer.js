@@ -13,7 +13,7 @@ const clientCertKey = './config/client.key';
 
 const GROUP_ID = 'herokafecta_hokko';
 const CLIENT_ID = 'herokafecta_consumer_hokko';
-const TOPIC = process.argv[2]　|| 'test';
+const TOPIC = process.argv[2] || 'test';
 const PARTITION = 0;
 const IDLE_TIMEOUT = 1000;
 const LOGLEVEL = 5;
@@ -33,9 +33,10 @@ let consumer = new kafka.SimpleConsumer({
 });
 
 let dataHandler = (messageSet, topic, partition) => {
-    console.log("sub", new Date().toString());
     messageSet.forEach((msg, index) => {
-        console.log(`index: ${index}, topic: ${topic}, partition: ${partition}, offset: ${msg.offset} => ${msg.message.value.toString('utf8')}`);
+        console.log(`<index: ${index}, topic: ${topic}, partition: ${partition}, offset: ${msg.offset}> 
+${msg.message.value.toString('utf8')}
+`);
     });
 };
 

@@ -35,7 +35,7 @@ return producer.init().then(() => {
             partition: PARTITION,
             message: {
                 key : "test-message",
-                value: "date: " + new Date().toString()
+                value: "TEST MESSAGE, date: " + new Date().toString()
             }
         }).then(function (result) {
             console.log(result);
