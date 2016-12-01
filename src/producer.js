@@ -5,13 +5,12 @@
 'use strict';
 
 const kafka = require('no-kafka');
-const debug = require('debug');
 
 const urls = process.env.KAFKA_URL;
 const clientCert = process.env.KAFKA_CLIENT_CERT || './config/client.crt';
 const clientCertKey = process.env.KAFKA_CLIENT_CERT_KEY || './config/client.key';
 
-const CLIENTID = process.env.CLIENTID || 'herokafecta_consumer01';
+const CLIENTID = process.env.CLIENTID || 'topicviewer_consumer_hokko';
 const TOPIC = process.env.TOPIC || 'defaulttopic';
 let PARTITION = (process.env.PARTITION === '0') ? 0 : Number(process.env.PARTITION) || null;
 
@@ -35,7 +34,7 @@ return producer.init().then(() => {
             partition: PARTITION,
             message: {
                 key : "test-message",
-                value: "TEST MESSAGE, date: " + new Date().toString()
+                value: "date: " + new Date().toString()
             }
         }).then(function (result) {
             console.log(result);

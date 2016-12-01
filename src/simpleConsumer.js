@@ -5,15 +5,14 @@
 'use strict';
 
 const kafka = require('no-kafka');
-const debug = require('debug');
 
-const urls = "kafka+ssl://52.44.69.117:9096,kafka+ssl://52.202.183.44:9096,kafka+ssl://52.45.180.80:9096";
+const urls = "kafka+ssl://34.193.11.34:9096,kafka+ssl://34.193.184.236:9096,kafka+ssl://34.193.143.227:9096";
 const clientCert = './config/client.crt';
 const clientCertKey = './config/client.key';
 
-const GROUP_ID = 'herokafecta_hokko';
-const CLIENT_ID = 'herokafecta_consumer_hokko';
-const TOPIC = process.argv[2] || 'test';
+const GROUP_ID = 'topicviewer_hokko';
+const CLIENT_ID = 'topicviewer_consumer_hokko';
+const TOPIC = process.argv[2] || 'qml_v1';
 const PARTITION = 0;
 const IDLE_TIMEOUT = 1000;
 const LOGLEVEL = 5;
@@ -34,7 +33,7 @@ let consumer = new kafka.SimpleConsumer({
 
 let dataHandler = (messageSet, topic, partition) => {
     messageSet.forEach((msg, index) => {
-        console.log(`<index: ${index}, topic: ${topic}, partition: ${partition}, offset: ${msg.offset}> 
+        console.log(`[index: ${index}, topic: ${topic}, partition: ${partition}, offset: ${msg.offset}]
 ${msg.message.value.toString('utf8')}
 `);
     });

@@ -1,30 +1,15 @@
 {
-  "name": "herokafecta",
+  "name": "topicviewer",
   "version": "1.0.0",
   "description": "heroku-kafka simple inspection tool.",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/simpleConsumer.js",
     "viewtopic": "node ./src/simpleConsumer.js"
   },
-  "directories": {
-    "test": "test/"
-  },
-  "keywords": [
-    "heroku",
-    "kafka"
-  ],
   "author": "Manabu Osada",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
-    "bluebird": "^3.4.6",
-    "debug": "^2.2.0",
-    "js-yaml": "^3.6.1",
-    "lodash.uniqby": "4.6.1",
     "no-kafka": "^3.0.1"
-  },
-  "devDependencies": {
-    "intelli-espower-loader": "^1.0.1",
-    "mocha": "^3.1.2",
-    "power-assert": "^1.4.1"
   }
 }
